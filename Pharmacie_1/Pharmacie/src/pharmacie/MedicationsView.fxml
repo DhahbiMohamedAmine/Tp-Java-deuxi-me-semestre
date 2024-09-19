@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pharmacie.MedicationsViewController">
+    <children>
+      <ImageView fitHeight="450.0" fitWidth="614.0" pickOnBounds="true">
+         <image>
+            <Image url="@ord.jpg" />
+         </image>
+      </ImageView>
+        <TableView fx:id="medTable" layoutX="14.0" layoutY="14.0" opacity="0.74" prefHeight="200.0" prefWidth="600.0">
+            <columns>
+                <TableColumn fx:id="denoMed" prefWidth="75.0" text="Denomination" />
+                <TableColumn fx:id="compoMed" prefWidth="75.0" text="Composition" />
+                <TableColumn fx:id="formeMed" prefWidth="75.0" text="Forme" />
+                <TableColumn fx:id="dosageMed" prefWidth="75.0" text="Dosage" />
+                <TableColumn fx:id="prixMed" prefWidth="75.0" text="Prix" />
+                <TableColumn fx:id="typeMed" prefWidth="75.0" text="Type" />
+            </columns>
+        </TableView>
+        <ListView fx:id="medicationListView" layoutX="14.0" layoutY="250.0" opacity="0.73" prefHeight="200.0" prefWidth="200.0" />
+        <Button fx:id="showMedicationsButton" layoutX="250.0" layoutY="250.0" text="Show Medications" visible="false" />
+        <Button fx:id="addMedicationButton" layoutX="250.0" layoutY="300.0" opacity="0.86" text="Ajouter à l'Ordonnance" />
+    </children>
+</AnchorPane>

@@ -1,0 +1,5 @@
+SusceptibleDeterVenduEnSolde
+VendableParPiece
+RendementCalculable
+Descriptible
+VendableParKilogramme

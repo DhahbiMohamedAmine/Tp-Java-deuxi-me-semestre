@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="483.0" prefWidth="741.0" style="-fx-background-color: #FFA500;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pharmacie.main">
+   <children>
+      <Button fx:id="showMed" layoutX="531.0" layoutY="56.0" mnemonicParsing="false" onAction="#showM" prefHeight="30.0" prefWidth="168.0" style="-fx-background-color: #0000FF;" text="Afficher Medicaments" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <Button fx:id="showPatient" layoutX="394.0" layoutY="56.0" mnemonicParsing="false" onAction="#showP" style="-fx-background-color: #0000FF;" text="Afficher Patients" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <Button fx:id="showUser" layoutX="226.0" layoutY="56.0" mnemonicParsing="false" onAction="#showU" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: #0000FF;" text="Afficher Utilisateurs" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <AnchorPane fx:id="userPanel" layoutX="3.0" layoutY="94.0" prefHeight="387.0" prefWidth="735.0" visible="false">
+         <children>
+            <TableView fx:id="userTable" layoutX="295.0" layoutY="44.0" prefHeight="200.0" prefWidth="436.0">
+              <columns>
+                <TableColumn fx:id="nom" prefWidth="137.5999755859375" text="nom" />
+                <TableColumn fx:id="prenom" prefWidth="137.60000610351562" text="prenom" />
+                  <TableColumn fx:id="profil" prefWidth="162.4000244140625" text="profil" />
+              </columns>
+            </TableView>
+            <Label layoutX="500.0" layoutY="5.0" text="users" />
+            <Label layoutX="17.0" layoutY="44.0" text="Nom" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <TextField fx:id="nomField" layoutX="88.0" layoutY="40.0" />
+            <Label layoutX="8.0" layoutY="94.0" text="Prenom" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Label layoutX="15.0" layoutY="144.0" text="Profil" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Label layoutX="15.0" layoutY="194.0" text="Login" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Label layoutX="3.0" layoutY="244.0" text="Password" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <TextField fx:id="profilField" layoutX="88.0" layoutY="140.0" />
+            <TextField fx:id="prenomField" layoutX="88.0" layoutY="99.0" />
+            <TextField fx:id="loginField" layoutX="88.0" layoutY="190.0" />
+            <TextField fx:id="passwordField" layoutX="88.0" layoutY="240.0" />
+            <Button fx:id="addUser" layoutX="295.0" layoutY="269.0" mnemonicParsing="false" onAction="#addU" style="-fx-background-color: #0000FF;" text="Add" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button fx:id="updateUser" layoutX="402.0" layoutY="269.0" mnemonicParsing="false" onAction="#updateU" style="-fx-background-color: #0000FF;" text="Update" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button fx:id="deleteUser" layoutX="655.0" layoutY="269.0" mnemonicParsing="false" onAction="#deleteU" style="-fx-background-color: #0000FF;" text="Delete" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button fx:id="clear" layoutX="542.0" layoutY="269.0" mnemonicParsing="false" onAction="#clearFields" style="-fx-background-color: #0000FF;" text="Clear" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <TextField fx:id="idUsers" layoutX="238.0" layoutY="327.0" visible="false" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="patientPanel" layoutX="11.0" layoutY="94.0" prefHeight="369.0" prefWidth="703.0" visible="false">
+         <children>
+            <TableView fx:id="patientTable" layoutX="210.0" layoutY="31.0" prefHeight="200.0" prefWidth="488.0">
+               <columns>
+                  <TableColumn fx:id="nomP" prefWidth="57.0" text="nom" />
+                  <TableColumn fx:id="prenomP" prefWidth="79.0" text="prenom" />
+                  <TableColumn fx:id="dateP" prefWidth="72.0" text="dateDeNaissance" />
+                  <TableColumn fx:id="sexeP" prefWidth="89.60000610351562" text="sexe" />
+                  <TableColumn fx:id="adresseP" prefWidth="90.4000244140625" text="adresse" />
+                  <TableColumn fx:id="telephoneP" prefWidth="100.0" text="telehpone" />
+               </columns>
+            </TableView>
+            <Label layoutX="412.0" layoutY="-4.0" text="Patients" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font></Label>
+            <Button fx:id="addPatient" layoutX="255.0" layoutY="243.0" mnemonicParsing="false" onAction="#addP" style="-fx-background-color: #0000FF;" text="Add" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button fx:id="updatePatient" layoutX="338.0" layoutY="243.0" mnemonicParsing="false" onAction="#updateP" style="-fx-background-color: #0000FF;" text="Update" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button fx:id="deletePatient" layoutX="622.0" layoutY="243.0" mnemonicParsing="false" onAction="#deleteP" style="-fx-background-color: #0000FF;" text="Delete" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button fx:id="clear1" layoutX="539.0" layoutY="243.0" mnemonicParsing="false" onAction="#clearFieldsP" style="-fx-background-color: #0000FF;" text="Clear" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <TextField fx:id="idUsers1" layoutX="238.0" layoutY="327.0" visible="false" />
+            <Button fx:id="recherche" layoutX="444.0" layoutY="243.0" mnemonicParsing="false" onAction="#recherce" style="-fx-background-color: #0000FF;" text="Histoy" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <TextField fx:id="nompField" layoutX="89.0" layoutY="31.0" prefHeight="25.0" prefWidth="102.0" />
+            <Label layoutX="3.0" layoutY="30.0" prefHeight="17.0" prefWidth="42.0" text="Nom" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="prenompField" layoutX="90.0" layoutY="72.0" prefHeight="25.0" prefWidth="102.0" />
+            <Label layoutY="71.0" text="Prenom" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="adresseField" layoutX="90.0" layoutY="116.0" prefHeight="25.0" prefWidth="102.0" />
+            <Label layoutX="-1.0" layoutY="115.0" text="Adresse" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="datedenaissance" layoutX="90.0" layoutY="159.0" prefHeight="25.0" prefWidth="102.0" />
+            <Label layoutX="4.0" layoutY="158.0" text="Date" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="sexeField" layoutX="90.0" layoutY="207.0" prefHeight="25.0" prefWidth="102.0" />
+            <TextField fx:id="phoneField" layoutX="90.0" layoutY="250.0" prefHeight="25.0" prefWidth="102.0" />
+            <Label graphicTextGap="0.0" layoutX="-2.0" layoutY="249.0" text="phone" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="6.0" layoutY="206.0" text="sexe" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="medPanel" layoutY="94.0" prefHeight="387.0" prefWidth="741.0">
+         <children>
+            <TableView fx:id="medTable" layoutX="305.0" layoutY="23.0" prefHeight="200.0" prefWidth="430.0">
+               <columns>
+                  <TableColumn fx:id="denoMed" prefWidth="88.0" text="Dénomination" />
+                  <TableColumn fx:id="compoMed" prefWidth="79.0" text="Composition" />
+                  <TableColumn fx:id="formeMed" prefWidth="93.60003662109375" text="Forme_pharmaceutique" />
+                  <TableColumn fx:id="dosageMed" prefWidth="56.0" text="Dosage" />
+                  <TableColumn fx:id="prixMed" prefWidth="46.39996337890625" text="Prix" />
+                  <TableColumn fx:id="typeMed" prefWidth="68.0001220703125" text="Type" />
+               </columns>
+            </TableView>
+            <Label layoutX="484.0" text="Medicaments" />
+            <Label layoutX="8.0" layoutY="34.0" text="Denonimation" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <TextField fx:id="denomination" layoutX="135.0" layoutY="35.0" prefHeight="26.0" prefWidth="130.0" />
+            <Label layoutX="4.0" layoutY="82.0" text="composition" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Label layoutX="9.0" layoutY="127.0" text="Forme" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Label layoutX="5.0" layoutY="172.0" text="Dosage" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Label layoutX="15.0" layoutY="261.0" text="Prix" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <TextField fx:id="compsition" layoutX="135.0" layoutY="83.0" prefHeight="26.0" prefWidth="130.0" />
+            <TextField fx:id="dosage" layoutX="135.0" layoutY="173.0" prefHeight="26.0" prefWidth="130.0" />
+            <TextField fx:id="prix" layoutX="135.0" layoutY="257.0" prefHeight="26.0" prefWidth="130.0" />
+            <Button fx:id="addMed" layoutX="305.0" layoutY="237.0" mnemonicParsing="false" onAction="#addM" style="-fx-background-color: #0000FF;" text="Add" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button fx:id="updateMed" layoutX="411.0" layoutY="237.0" mnemonicParsing="false" onAction="#updateM" style="-fx-background-color: #0000FF;" text="Update" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button fx:id="deleteMed" layoutX="659.0" layoutY="237.0" mnemonicParsing="false" onAction="#deleteM" style="-fx-background-color: #0000FF;" text="Delete" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button fx:id="clearMed" layoutX="542.0" layoutY="237.0" mnemonicParsing="false" onAction="#clearFieldsM" style="-fx-background-color: #0000FF;" text="Clear" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <TextField fx:id="idMed" layoutX="238.0" layoutY="327.0" visible="false" />
+            <Label layoutX="13.0" layoutY="214.0" text="Type" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <TextField fx:id="forme" layoutX="135.0" layoutY="128.0" prefHeight="26.0" prefWidth="130.0" />
+            <ChoiceBox fx:id="type" layoutX="134.0" layoutY="215.0" prefHeight="26.0" prefWidth="130.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</Pane>
